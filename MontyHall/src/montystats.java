@@ -36,19 +36,43 @@ public class montystats {
 				System.out.println("Please make a valid selection...");
 				input.next();
 				}
-			userChoice = input.nextInt();
-			}while (!(userChoice == 1 || userChoice == 2));
+				userChoice = input.nextInt();
+			} while (!(userChoice == 1 || userChoice == 2));
+			
+			// Ask how many times for game to be simulated
+			int numberOfSimulations = 0;
+			Scanner input2 = new Scanner(System.in);
+			do{
+				System.out.println("How many times would you like the game to be simulated? ");
+				while (!(input2.hasNextInt())) {
+					System.out.println("Please make a valid selection...");
+					input2.next();
+				}
+				numberOfSimulations = input2.nextInt();
+				System.out.println(numberOfSimulations);
+			} while (numberOfSimulations == 0);
+			
+	
 		
 				// Switch statement to choose between methods
 				switch (userChoice) {
 				// Could use for loops or while loops to keep these going
-					case 1: keepSameDoor();
-					case 2: changeDoors();
+					case 1: keepSameDoor(); break;
+					case 2: changeDoors(); break; 
 			}
 				String wishToContinue;
 				Scanner choice = new Scanner(System.in);			
 				System.out.println("Do you want to run the program again?");
 				wishToContinue= choice.next();
+				
+				while (!(wishToContinue.equalsIgnoreCase("yes") 
+				    	|| wishToContinue.equalsIgnoreCase("no"))) {
+				        System.out.println("Error, please enter a valid selection...");
+				        wishToContinue = choice.next(); // this line advances the scanner
+			   }
+			   if (wishToContinue.equalsIgnoreCase("no")) {
+				  endgame = false;	
+			   } 
 		}
 		//We could probably format this to make it look better in the console
 		//System.out.println(Arrays.deepToString(threedoors));
