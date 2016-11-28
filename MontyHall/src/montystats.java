@@ -38,7 +38,6 @@ public class montystats {
 				}
 				userChoice = input.nextInt();
 			} while (!(userChoice == 1 || userChoice == 2));
-			
 			// Ask how many times for game to be simulated
 			int numberOfSimulations = 0;
 			Scanner input2 = new Scanner(System.in);
@@ -52,7 +51,7 @@ public class montystats {
 				System.out.println(numberOfSimulations);
 			} while (numberOfSimulations == 0);
 			
-	
+
 		
 				// Switch statement to choose between methods
 				switch (userChoice) {
@@ -76,6 +75,7 @@ public class montystats {
 		}
 		char[] str = { 'a', 'b', 'c', 'd', 'e', 'f', 'g' };
 		System.out.print(str);
+		
 	}
 
 		
