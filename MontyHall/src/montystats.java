@@ -50,8 +50,8 @@ public class montystats {
 				System.out.println("Do you want to run the program again?");
 				wishToContinue= choice.next();
 		}
-		//We could probably format this to make it look better in the console
-		//System.out.println(Arrays.deepToString(threedoors));
+		char[] str = { 'a', 'b', 'c', 'd', 'e', 'f', 'g' };
+		System.out.print(str);
 	}
 
 		
@@ -98,5 +98,5 @@ public class montystats {
 				"% of the time.");
 	}
 	
-
+	
 }
