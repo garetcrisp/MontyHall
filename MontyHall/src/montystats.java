@@ -11,17 +11,7 @@ public class montystats {
 		System.out.println("You will have the option to keep your door or switch to a new one.");
 		System.out.println("We will keep track of how often you win depending on what you choose.");
 		
-		//We obviously need to make this random but i went ahead and set up a 2d array
-		
-		int[ ][ ] threedoors = new int[2][3];
-		
-		/*threedoors[0][0] = 1;
-		threedoors[0][1] = 2;
-		threedoors[0][2] = 3;
-		threedoors[1][0] = 1000;
-		threedoors[0][0] = 0;
-		threedoors[0][0] = 0;
-		*/
+	
 		boolean endgame=true;
 		
 		while (endgame){
@@ -76,6 +66,21 @@ public class montystats {
 		}
 		char[] str = { 'a', 'b', 'c', 'd', 'e', 'f', 'g' };
 		System.out.print(str);
+		int[ ][ ] threedoors = new int[3][3];
+			for(int j = 0; j < threedoors.length; j++){
+				for(int i = 0; i < threedoors[j].length; i++){
+					threedoors[j][i] = 4;
+				}
+			}
+			
+			
+		for(int j = 0; j <= 79; j += 3){
+			if(j % 6 == 0){
+				System.out.print(j);
+			} else { 
+				System.out.print("Pizza");
+			}
+			}	
 	}
 
 		
