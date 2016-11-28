@@ -74,8 +74,8 @@ public class montystats {
 				  endgame = false;	
 			   } 
 		}
-		//We could probably format this to make it look better in the console
-		//System.out.println(Arrays.deepToString(threedoors));
+		char[] str = { 'a', 'b', 'c', 'd', 'e', 'f', 'g' };
+		System.out.print(str);
 	}
 
 		
@@ -124,5 +124,5 @@ public class montystats {
 		return percent;
 	}
 	
-
+	
 }
