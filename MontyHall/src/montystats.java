@@ -22,32 +22,39 @@ public class montystats {
 		threedoors[0][0] = 0;
 		threedoors[0][0] = 0;
 		*/
+		boolean endgame=true;
 		
+		while (endgame){
 		// Ask for user to pick whether the door will be kept or switched 
-		int userChoice = 0;
-		Scanner input = new Scanner(System.in);
-		do{
-			System.out.println("Enter 1 if you would like for the program to be ran in such a way " +
+			int userChoice = 0;
+			Scanner input = new Scanner(System.in);
+			do{
+				System.out.println("Enter 1 if you would like for the program to be ran in such a way " +
 					"that a new door is not chosen. \nSelect 2 if you want the door to be switched " +
 					"each time. ");
-			while (!(input.hasNextInt(2) || input.hasNextInt(3))) {
+				while (!(input.hasNextInt(2) || input.hasNextInt(3))) {
 				System.out.println("Please make a valid selection...");
 				input.next();
-			}
+				}
 			userChoice = input.nextInt();
-		} while (!(userChoice == 1 || userChoice == 2));
+			}while (!(userChoice == 1 || userChoice == 2));
 		
-		// Switch statement to choose between methods
-		switch (userChoice) {
-			// Could use for loops or while loops to keep these going
-			case 1: keepSameDoor();
-			case 2: changeDoors();
+				// Switch statement to choose between methods
+				switch (userChoice) {
+				// Could use for loops or while loops to keep these going
+					case 1: keepSameDoor();
+					case 2: changeDoors();
+			}
+				String wishToContinue;
+				Scanner choice = new Scanner(System.in);			
+				System.out.println("Do you want to run the program again?");
+				wishToContinue= choice.next();
 		}
-		
 		//We could probably format this to make it look better in the console
-		System.out.println(Arrays.deepToString(threedoors));
+		//System.out.println(Arrays.deepToString(threedoors));
 	}
 
+		
 	// Method for keeping the same door.
 	private static void keepSameDoor() {
 		Random rand = new Random();
@@ -63,7 +70,8 @@ public class montystats {
 				timesCorrect++;
 			}
 		}
-		System.out.println(timesCorrect / n);
+		System.out.print("You got prize " + (timesCorrect / n) * 100 + 
+				"% of the time.");
 	}
 
 	// Method for switching eliminating one door and then choosing another door. 
@@ -86,10 +94,9 @@ public class montystats {
 				timesCorrect++;
 			}
 		}
-		System.out.print(timesCorrect / n);
+		System.out.print("You got prize " + (timesCorrect / n) * 100 + 
+				"% of the time.");
 	}
-	
-
 	
 
 }
