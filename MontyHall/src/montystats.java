@@ -57,8 +57,8 @@ public class montystats {
 				// Switch statement to choose between methods
 				switch (userChoice) {
 				// Could use for loops or while loops to keep these going
-					case 1: keepSameDoor(); break;
-					case 2: changeDoors(); break; 
+					case 1: keepSameDoor(numberOfSimulations); break;
+					case 2: changeDoors(numberOfSimulations); break; 
 			}
 				String wishToContinue;
 				Scanner choice = new Scanner(System.in);			
@@ -80,11 +80,10 @@ public class montystats {
 
 		
 	// Method for keeping the same door.
-	private static void keepSameDoor() {
+	private static double keepSameDoor(int number) {
 		Random rand = new Random();
 		double timesCorrect = 0;
-		int n = 10000; 
-		for (int i = 0; i <= n; i++) {
+		for (int i = 0; i <= number; i++) {
 			// randomly chooses a door
 			int doorChoice = rand.nextInt(3);
 			// places the "prize" behind a random door
@@ -94,16 +93,17 @@ public class montystats {
 				timesCorrect++;
 			}
 		}
-		System.out.print("You got prize " + (timesCorrect / n) * 100 + 
+		double percent = (timesCorrect / number) * 100;
+		System.out.print("You got prize " + percent + 
 				"% of the time.");
+		return percent;
 	}
 
 	// Method for switching eliminating one door and then choosing another door. 
-	private static void changeDoors() {
+	private static double changeDoors(int number) {
 		Random rand = new Random();
 		double timesCorrect = 0;
-		int n = 100000;
-		for (int i = 0; i <= n; i++) {
+		for (int i = 0; i <= number; i++) {
 			int doorChoice = rand.nextInt(3), doorFiller = rand.nextInt(3), 
 					doorEliminator, doorChanger;
 			// insure that an empty door is eliminated 
@@ -118,8 +118,10 @@ public class montystats {
 				timesCorrect++;
 			}
 		}
-		System.out.print("You got prize " + (timesCorrect / n) * 100 + 
+		double percent = (timesCorrect / number) * 100;
+		System.out.print("You got prize " + percent + 
 				"% of the time.");
+		return percent;
 	}
 	
 
